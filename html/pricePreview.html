@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/iuapmobile.um.css">
+		<link rel="stylesheet" href="../css/font-icons.css">
+		<script src="../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script src="../js/summer.js" ></script>
+		<script src="../js/jquery-2.1.4.min.js" ></script>
+		<script src="../js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+		<script src="../js/pricePreview.js"></script>
+		<style type="text/css">
+			table.gridtable {
+				font-family: verdana, arial, sans-serif;
+				font-size: 11px;
+				color: #333333;
+				border-width: 1px;
+				border-color: #666666;
+				border-collapse: collapse;
+			}
+			table.gridtable th {
+				border-width: 1px;
+				padding: 8px;
+				border-style: solid;
+				border-color: #666666;
+				background-color: #dedede;
+			}
+			table.gridtable td {
+				border-width: 1px;
+				padding: 8px;
+				border-style: solid;
+				border-color: #666666;
+				background-color: #ffffff;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="um-page" id="main">
+
+			<div id="content" class="um-content p15">
+				<table id="table1" class="gridtable">
+					<tr>
+						<th colspan="6">用友物流一卡通系统报价单</th>
+					</tr>
+					<tr>
+						<th></th>
+						<th></th>
+						<th>软件折扣</th>
+						<th></th>
+						<th colspan="2">天瑞郑州水泥有限公司</th>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td id="softDiscount">0.5</td>
+						<td>单价</td>
+						<td>数量</td>
+						<td>报价</td>
+					</tr>
+					<tr>
+						<td rowspan="9">软件部分</td>
+						<td rowspan="3">UAP</td>
+						<td>数据交换平台</td>
+						<td id="dataChanged_unit"></td>
+						<td id="dataChanged_count"></td>
+						<td id="dataChanged_price"></td>
+					</tr>
+					<tr>
+						<td >动态建模平台</td>
+						<td id="dynamicModel_unit"></td>
+						<td id="dynamicModel_count"></td>
+						<td id="dynamicModel_price"></td>
+					</tr>
+					<tr>
+						<td >自由报表</td>
+						<td id="report_unit"></td>
+						<td id="report_count"></td>
+						<td id="report_price"></td>
+					</tr>
+					<tr>
+						<td rowspan="3">LE</td>
+						<td>计量基础数据</td>
+						<td id="baseData_unit"></td>
+						<td id="baseData_count"></td>
+						<td id="baseData_price"></td>
+					</tr>
+					<tr>
+						<td >计量衡器数</td>
+						<td id="leWeiCount_unit"></td>
+						<td id="leWeiCount_count"></td>
+						<td id="leWeiCount_price"></td>
+					</tr>
+					<tr>
+						<td >无人值守衡器数</td>
+						<td id="leNoWeiCount_unit"></td>
+						<td id="leNoWeiCount_count"></td>
+						<td id="leNoWeiCount_price"></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td >软件小计</td>
+						<td ></td>
+						<td ></td>
+						<td id="softTotal"></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td >软件合计</td>
+						<td ></td>
+						<td ></td>
+						<td ></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td >软件折扣后合计</td>
+						<td ></td>
+						<td ></td>
+						<td id="softTotals"></td>
+					</tr>
+					<tr>
+						<td rowspan="18">硬件部分</td>
+						<td rowspan="3">开单室</td>
+						<td >计量IC卡</td>
+						<td id="ticketA_unit"></td>
+						<td id="ticketA_count"></td>
+						<td id="ticketA_price"></td>
+					</tr>
+					<tr>
+						<td >自助发卡机</td>
+						<td id="ticketB_unit"></td>
+						<td id="ticketB_count"></td>
+						<td id="ticketB_price"></td>
+					</tr>
+					<tr>
+						<td >IC卡读写器</td>
+						<td id="ticketC_unit"></td>
+						<td id="ticketC_count"></td>
+						<td id="ticketC_price"></td>
+					</tr>
+					<tr>
+						<td rowspan="5">门岗</td>
+						<td >IC卡读写器</td>
+						<td id="doorA_unit"></td>
+						<td id="doorA_count"></td>
+						<td id="doorA_price"></td>
+					</tr>
+					<tr>
+						<td >道闸控制及防砸</td>
+						<td id="doorB_unit"></td>
+						<td id="doorB_count"></td>
+						<td id="doorB_price"></td>
+					</tr>
+					<tr>
+						<td >门岗视频监控</td>
+						<td id="doorC_unit"></td>
+						<td id="doorC_count"></td>
+						<td id="doorC_price"></td>
+					</tr>
+					<tr>
+						<td >自助收卡机</td>
+						<td id="doorD_unit"></td>
+						<td id="doorD_count"></td>
+						<td id="doorD_price"></td>
+					</tr>
+					<tr>
+						<td >计量单打印终端</td>
+						<td id="doorE_unit"></td>
+						<td id="doorE_count"></td>
+						<td id="doorE_price"></td>
+					</tr>
+					<tr>
+						<td rowspan="5">计量室</td>
+						<td >计量衡器数据采集</td>
+						<td id="weightA_unit"></td>
+						<td id="weightA_count"></td>
+						<td id="weightA_price"></td>
+					</tr>
+					<tr>
+						<td >无人值守计量一体机</td>
+						<td id="weightB_unit"></td>
+						<td id="weightB_count"></td>
+						<td id="weightB_price"></td>
+					</tr>
+					<tr>
+						<td >视频监控抓拍</td>
+						<td id="weightC_unit"></td>
+						<td id="weightC_count"></td>
+						<td id="weightC_price"></td>
+					</tr>
+					<tr>
+						<td >红外对射卡位</td>
+						<td id="weightD_unit"></td>
+						<td id="weightD_count"></td>
+						<td id="weightD_price"></td>
+					</tr>
+					<tr>
+						<td >IC卡读写器</td>
+						<td id="weightE_unit"></td>
+						<td id="weightE_count"></td>
+						<td id="weightE_price"></td>
+					</tr>
+					<tr>
+						<td>监控室</td>
+						<td>语音对讲中控主机</td>
+						<td id="monitorA_unit"></td>
+						<td id="monitorA_count"></td>
+						<td id="monitorA_price"></td>
+					</tr>
+					<tr>
+						<td>手持收料</td>
+						<td>手持终端</td>
+						<td id="material_unit"></td>
+						<td id="material_count"></td>
+						<td id="material_price"></td>
+					</tr>
+					<tr>
+						<td rowspan="3">质检加密</td>
+						<td>IC卡读写器</td>
+						<td id="quaHardwareA_unit"></td>
+						<td id="quaHardwareA_count"></td>
+						<td id="quaHardwareA_price"></td>
+					</tr>
+					<tr>
+						<td>手持终端+IC卡读写器</td>
+						<td id="quaHardwareB_unit"></td>
+						<td id="quaHardwareB_count"></td>
+						<td id="quaHardwareB_price"></td>
+					</tr>
+					<tr>
+						<td>质检IC卡</td>
+						<td id="quaHardwareC_unit"></td>
+						<td id="quaHardwareC_count"></td>
+						<td id="quaHardwareC_price"></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>施工</td>
+						<td>管线等辅料、<br/>土建等施工</td>
+						<td></td>
+						<td></td>
+						<td id="build"></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td>硬件小计</td>
+						<td></td>
+						<td></td>
+						<td id="hardwareTotal"></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td>硬件合计</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td>合计</td>
+						<td></td>
+						<td></td>
+						<td id="total"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>

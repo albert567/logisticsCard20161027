@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/iuapmobile.um.css">
+		<link rel="stylesheet" href="../css/font-icons.css">
+        <link rel="stylesheet" type="text/css" href="../css/islider.css">
+        <style>
+        	.iSlider-wrapper {
+        		height: 200px;
+        	}
+        </style>
+
+		<script src="../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script src="../js/summer.js" ></script>
+		<script src="../js/jquery-2.1.4.min.js" ></script>
+		<script src="../js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+		<script src="../js/picDescription.js" ></script>
+        <script src="../js/islider.js"></script>
+        <script>
+        	$(function() {
+        		var list = [{
+        			content: "../img/love.png"
+        		}, {
+        			content: "../img/sun.png"
+        		}, {
+        			content: "../img/waite.png"
+        		}];
+        		var islider = new iSlider({
+        			type: 'pic',
+        			data: list,
+        			dom: document.getElementById("iSlider-wrapper"),
+        			isLooping: true,
+        			animateType: 'default',
+        			onslideend: function(idx) {
+        				$("#nav").find("li").eq(idx).addClass("active").siblings("li").removeClass("active");
+        			},
+        		});
+        		//islider.addBtn();
+        		$("#nav").find("li").on("click", function() {
+        			$(this).addClass("active").siblings("li").removeClass("active");
+        			var i = $(this).index();
+        			islider.slideTo(i);
+        		});		
+        		$(islider.wrap).on("click",".islider-btn-outer",function(){
+        			var i = islider.slideIndex;
+        			$("#nav").find("li").eq(i).addClass("active").siblings("li").removeClass("active");
+        		});	
+        	});
+        </script>
+	</head>
+	<body>
+		<div class="um-page" id="main">
+			<div id="header" class="um-header">
+				<h3 id="hh">三种方案</h3>
+			</div>
+			<div id="content" class="um-content um-content-fill p15">
+				
+                <!-- 该画廊最好在um-content上加上um-content-fill样式类 -->
+                <ul class="um-tabbar um-tabbar-underline" id="nav">
+                	<li class="active">
+                		<a href="javascript:;">A:地磅计量采集（低配）</a>
+                	</li>
+                	<li>
+                		<a href="javascript:;">B:计量一卡通（中配）</a>
+                	</li>
+                	<li>
+                		<a href="javascript:;">C:智能工厂（高配）</a>
+                	</li>
+                </ul>
+                <div id="iSlider-wrapper" class="iSlider-wrapper"></div>
+				
+			</div>
+			<div class="um-footer">
+				<div class="btn-group btn-group-justify">
+					<button type="button" class="btn" onclick="pre()">
+						上一步
+					</button>
+					<button type="button" class="btn" onclick="next()">
+						下一步
+					</button>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

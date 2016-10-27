@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/iuapmobile.um.css">
+		<link rel="stylesheet" href="../css/font-icons.css">
+		<script src="../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script src="../js/summer.js" ></script>
+		<script src="../js/jquery-2.1.4.min.js" ></script>
+		<script src="../js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+		<script src="../js/industry.js" ></script>
+	</head>
+	<body>
+		<div class="um-page" id="main">
+			<div id="header" class="um-header">
+				<a href="#"  class="um-back">返回</a>
+				<h3 id="hh">基本信息维护</h3>
+			</div>
+			<div id="content" class="um-content p15">
+				<ul class="um-list">
+					<li class="um-list-item">
+						<div class="um-list-item-inner">
+							<span class="h pa um-box-vc um-red f20" style="margin-left:-10px;">*</span>
+							<div class="um-list-item-left">
+								行业选择：
+							</div>
+							<div class="um-list-item-right">
+								<select id="industry" class="form-control" dir="rtl">
+									<option value="建材" selected="selected">建材</option>
+									<option value="化工医药">化工医药</option>
+									<option value="农业产业化">农业产业化</option>
+									<option value="能源与资源">能源与资源</option>
+									<option value="电力">电力</option>
+									<option value="其他">其他</option>
+								</select>
+							</div>
+						</div>
+					</li>
+					<li class="um-list-item">
+						<div class="um-list-item-inner">
+						<span class="h pa um-box-vc um-red f20" style="margin-left:-10px;">*</span>
+							<div class="um-list-item-left">
+								公司名称：
+							</div>
+							<div class="um-list-item-right">
+								<input type="text" class="form-control tr" value="天瑞水泥集团股份有限公司"
+								placeholder="请输入公司名称(必填)" id="company">
+							</div>
+						</div>
+					</li>
+					<li class="um-list-item">
+						<div class="um-list-item-inner">
+						<span class="h pa um-box-vc um-red f20" style="margin-left:-10px;">*</span>
+							<div class="um-list-item-left">
+								销售分公司：
+							</div>
+							<div class="um-list-item-right">
+								<input type="text" class="form-control tr" value="平顶山分公司"
+								placeholder="请输入销售分公司(必填)" id="saleCompany">
+							</div>
+						</div>
+					</li>
+					<li class="um-list-item">
+						<div class="um-list-item-inner">
+						<span class="h pa um-box-vc um-red f20" style="margin-left:-10px;">*</span>
+							<div class="um-list-item-left">
+								销售顾问：
+							</div>
+							<div class="um-list-item-right">
+								<input type="text" class="form-control tr" id="saleAdviser"
+								placeholder="请输入销售顾问(必填)" value="温玉亭">
+							</div>
+						</div>
+					</li>
+					<li class="um-list-item">
+						<div class="um-list-item-inner">
+						<span class="h pa um-box-vc um-red f20" style="margin-left:-10px;">*</span>
+							<div class="um-list-item-left">
+								软件折扣：
+							</div>
+							<div class="um-list-item-right">
+								<input type="number" class="form-control tr" id="softDiscount"
+								placeholder="请输入软件折扣(必填)" value="0.6">
+							</div>
+						</div>
+					</li>
+					<li class="um-list-item">
+						<div class="um-list-item-inner">
+						<span class="h pa um-box-vc um-red f20" style="margin-left:-10px;">*</span>
+							<div class="um-list-item-left">
+								报价工厂数：
+							</div>
+							<div class="um-list-item-right">
+								<input type="number" class="form-control tr" id="factoryCount"
+								placeholder="请输入报价工厂数(必填)" value="2">
+							</div>
+						</div>
+					</li>
+					<li class="um-list-item">
+						<div class="um-list-item-inner">
+							<div class="um-list-item-left">
+								购买报表平台：
+							</div>
+							<div class="um-list-item-right">
+								<label class="um-switch1">
+									<input id="isBuyReport" type="checkbox" checked="checked" value="on">
+									<div class="um-track">
+										<div class="um-handle"></div>
+									</div> </label>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="um-footer">
+				<div class="btn-group btn-group-justify">
+					<button type="button" class="btn" onclick="pre()">
+						返回
+					</button>
+					<button type="button" class="btn" onclick="next()">
+						下一步
+					</button>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

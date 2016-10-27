@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/iuapmobile.um.css">
+		<link rel="stylesheet" href="../css/font-icons.css">
+		<link rel="stylesheet" type="text/css" href="../css/iuapmobile.um.listview.css">
+		<style>
+			.msg-info {
+				position: relative;
+			}
+			.msg-info .um-badge {
+				position: absolute;
+				right: -10px;
+				font-size: 12px;
+			}
+			.msg-header {
+				width: 40px;
+				height: 40px;
+				line-height: 40px;
+				background: blue;
+				border-radius: 50%;
+				text-align: center;
+				color: white;
+			}
+			.to-store {
+				background: #EE9143;
+				color: white;
+			}
+
+		</style>
+
+		<style>
+			.um-process {
+				margin-left: 15px;
+			}
+			.um-process .um-list-item {
+				position: relative;
+				border-left: 2px dotted green;
+			}
+			.um-process .um-list-item:last-child {
+				border-left: none;
+			}
+			.um-process .um-list-item:before {
+				content: none !important;
+			}
+			.um-process .um-list-item:after {
+				content: url("../img/marker5.jpg");
+				position: absolute;
+				left: -12px;
+				top: 2px;
+				width: 14px;
+			}
+			.um-process .um-list-item:first-child:after {
+				content: url("../img/marker6.jpg");
+			}
+			.um-process .um-list-item:last-child:after {
+				content: url("../img/marker4.jpg");
+			}
+
+		</style>
+
+		<script src="../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script src="../js/summer.js" ></script>
+		<script src="../js/jquery-2.1.4.min.js" ></script>
+		<script src="../js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+		<script src="../js/history.js"></script>
+		<script type="text/javascript" src="../js/knockout.js"></script>
+		<script type="text/javascript" src="../js/Frameworks/iuapmobile.frameworks.listview.js"></script>
+	</head>
+	<body>
+		<div class="um-page" id="main">
+			<div id="header" class="um-header">
+				<a href="#"  class="um-back">返回</a>
+				<h3 id="hh">历史数据</h3>
+			</div>
+			<div id="content" class="um-content" style="position: relative">
+				<div class="um-input-group" style="position:absolute;z-index: 100;width:100%">
+					<span class="btn ti-search" onclick="search()"></span>
+					<input type="search" class="form-control" id="search" placeholder="搜索">
+				</div>
+				<div class="um-listview-wrap mt40" id="listview">
+					<ul class="um-list um-no-active" data-bind="foreach: data">
+						<li class="um-listview-row">
+							<a href="#" class="um-list-item um-swipe-action um-no-icon">
+							<div class="um-swipe-btns">
+								<span class="um-swipe-btn to-store ti-pencil"  data-bind="click:$parent.rowCollect"></span>
+								<span class="um-swipe-btn um-delete ti-trash"></span>
+							</div>
+							<div class="um-list-item-media msg-info">
+								<img alt="" data-bind="attr:{'src': '../img/factory.png'}">
+								<span class="um-badge" data-bind="text:FACTORY_COUNT,visible:FACTORY_COUNT>0"></span>
+							</div>
+							<div class="um-list-item-inner">
+								<div class="um-list-item-body">
+									<p class="um-media-heading fb f16 um-text-overflow">
+										公司名称：<span data-bind="text:COMPANY"></span>
+									</p>
+									<p class="f16 fb um-text-overflow">
+										分公司：<span data-bind="text:SALE_COMPANY"></span>
+										顾问：<span data-bind="text:SALE_ADVISER"></span>
+									</p>
+									<p class="um-gray f14 um-text-overflow">
+										购买报表平台：<span data-bind="text:IS_BUY_REPORT=='true'?'是':'否'"></span>
+										软件折扣：<span data-bind="text:SOFT_DISCOUNT"></span>
+									</p>
+									<p class="um-gray f14 um-text-overflow">
+										方案选择：<span data-bind="text:PLAN"></span>
+									</p>
+									<p class="um-gray f14 um-text-overflow">
+										创建时间：<span data-bind="text:CREATEDATE"></span>
+									</p>
+								</div>
+							</div> </a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</body>
+</html>

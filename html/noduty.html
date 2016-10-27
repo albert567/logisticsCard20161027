@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/iuapmobile.um.css">
+		<link rel="stylesheet" href="../css/font-icons.css">
+		<script src="../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script src="../js/summer.js" ></script>
+		<script src="../js/jquery-2.1.4.min.js" ></script>
+		<script src="../js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+		<script src="../js/noduty.js" ></script>
+	</head>
+	<body>
+		<div class="um-page" id="main">
+			<div id="header" class="um-header">
+				<a href="#"  class="um-back">返回</a>
+				<h3 id="hh">1/5工厂信息维护</h3>
+			</div>
+			<div id="content" class="um-content p15">
+				<ul class="um-list">
+					<li class="um-list-item">
+						<div class="um-list-item-inner">
+							<span class="h pa um-box-vc um-red f20" style="margin-left:-10px;">*</span>
+							<div class="um-list-item-left">
+								工厂名称：
+							</div>
+							<div class="um-list-item-right">
+								<input type="text" class="form-control tr" id="factoryName"
+								placeholder="请输入工厂名称(必填)" value="天瑞集团郑州水泥有限公司">
+							</div>
+						</div>
+					</li>
+					<li class="um-list-item">
+						<div class="um-list-item-inner">
+							<span class="h pa um-box-vc um-red f20" style="margin-left:-10px;">*</span>
+							<div class="um-list-item-left">
+								大宗物资
+								<br/>
+								进出厂门数：
+							</div>
+							<div class="um-list-item-right">
+								<input type="number" class="form-control tr" id="itemInOut"
+								placeholder="请输入大宗物资进出厂门数(必填)" value="3">
+							</div>
+						</div>
+					</li>
+					<li class="um-list-item">
+						<div class="um-list-item-inner">
+							<span class="h pa um-box-vc um-red f20" style="margin-left:-10px;">*</span>
+							<div class="um-list-item-left">
+								计量衡器数量：
+							</div>
+							<div class="um-list-item-right">
+								<input type="number" class="form-control tr" id="weightCount"
+								placeholder="请输入计量衡器数量(必填)" value="3">
+							</div>
+						</div>
+					</li>
+					<li class="um-list-item">
+						<div class="um-list-item-inner">
+							<span class="h pa um-box-vc um-red f20" style="margin-left:-10px;">*</span>
+							<div class="um-list-item-left">
+								开单员/班：
+							</div>
+							<div class="um-list-item-right">
+								<input type="number" class="form-control tr" id="ticketCount"
+								placeholder="请输入开单员/班(必填)" value="3">
+							</div>
+						</div>
+					</li>
+					<li class="um-list-item">
+						<div class="um-list-item-inner">
+							<span class="h pa um-box-vc um-red f20" style="margin-left:-10px;">*</span>
+							<div class="um-list-item-left">
+								计量员/班：
+							</div>
+							<div class="um-list-item-right">
+								<input type="number" class="form-control tr" id="meterCount"
+								placeholder="请输入计量员/班(必填)" value=2>
+							</div>
+						</div>
+					</li>
+					<li class="um-list-item">
+						<div class="um-list-item-inner">
+							<div class="um-list-item-left">
+								是否无人
+								<br/>
+								值守计量：
+							</div>
+							<div class="um-list-item-right">
+								<label class="um-switch1">
+									<input id="isNoduty" type="checkbox" value="on" checked="checked">
+									<div class="um-track">
+										<div class="um-handle"></div>
+									</div> </label>
+							</div>
+						</div>
+					</li>
+					<li class="um-list-item">
+						<div class="um-list-item-inner">
+							<span class="h pa um-box-vc um-red f20" style="margin-left:-10px;">*</span>
+							<div class="um-list-item-left">
+								无人值守
+								<br/>
+								监控员/班：
+							</div>
+							<div class="um-list-item-right">
+								<input type="number" class="form-control tr" id="noDutyMonitors"
+								placeholder="请输入无人值守监控员/班" value="2">
+							</div>
+						</div>
+					</li>
+					<li class="um-list-item">
+						<div class="um-list-item-inner">
+							<span class="h pa um-box-vc um-red f20" style="margin-left:-10px;">*</span>
+							<div class="um-list-item-left">
+								收料员/班：
+							</div>
+							<div class="um-list-item-right">
+								<input type="number" class="form-control tr" id="material"
+								placeholder="请输入收料员/班(必填)" value="2">
+							</div>
+						</div>
+					</li>
+					<li class="um-list-item">
+						<div class="um-list-item-inner">
+							<span class="h pa um-box-vc um-red f20" style="margin-left:-10px;">*</span>
+							<div class="um-list-item-left">
+								质检员/班：
+							</div>
+							<div class="um-list-item-right">
+								<input type="number" class="form-control tr" id="quality"
+								placeholder="请输入质检员/班(必填)" value="2">
+							</div>
+						</div>
+					</li>
+					<li class="um-list-item">
+						<div class="um-list-item-inner">
+							<span class="h pa um-box-vc um-red f20" style="margin-left:-10px;">*</span>
+							<div class="um-list-item-left">
+								IC卡数量：
+							</div>
+							<div class="um-list-item-right">
+								<input type="number" class="form-control tr" id="icCount"
+								placeholder="请输入IC卡数量(必填)" value="400">
+							</div>
+						</div>
+					</li>
+					<li class="um-list-item">
+						<div class="um-list-item-inner">
+							<span class="h pa um-box-vc um-red f20" style="margin-left:-10px;">*</span>
+							<div class="um-list-item-left">
+								质检卡数量：
+							</div>
+							<div class="um-list-item-right">
+								<input type="number" class="form-control tr" id="qIcCount"
+								placeholder="请输入质检卡数量(必填)" value="200">
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="um-footer">
+				<div class="btn-group btn-group-justify">
+					<button type="button" class="btn" onclick="pre()">
+						上一步
+					</button>
+					<button type="button" class="btn" onclick="next()">
+						下一步
+					</button>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

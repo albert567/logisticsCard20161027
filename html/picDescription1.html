@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/iuapmobile.um.css">
+		<link rel="stylesheet" href="../css/font-icons.css">
+        <link rel="stylesheet" type="text/css" href="../css/islider.css">
+        <link rel="stylesheet" href="../css/swipeContent.css">
+
+         <style>
+        	html,body,.um-page{height:100%}
+            .swipe-words {
+            	background-image:url("../img/inforbg.jpg");
+            	background-color: rgba(0,0,0,0);
+            	color: #efeff4;
+            }
+        </style>
+
+        <style>
+        	.iSlider-wrapper {
+        		height: 200px;
+        	}
+        </style>
+
+		<script src="../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script src="../js/summer.js" ></script>
+		<script src="../js/jquery-2.1.4.min.js" ></script>
+		<script src="../js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+		<script src="../js/picDescription1.js" ></script>
+       
+        <script src="../js/swipe.js" ></script>
+        <script src="../js/swipeContent.js" ></script>
+        <script src="../js/knockout-2.2.0.js"></script>
+	</head>
+	<body>
+		<div class="um-page" id="main">
+			<div id="header" class="um-header">
+			<a href="#"  class="um-back">返回</a>
+				<h3 id="hh">A:地磅计量采集（低配）</h3>
+			</div>
+			<div id="content" class="um-content p15">
+				
+                <div id="slider" class="swipe">
+                	<div class="swipe-wrap" data-bind="foreach:data">
+                		<div>
+                			<img data-bind="attr:{'src':img}">
+                			<div class="swipe-words pl10 pr10">
+                				<h2 data-bind="text:title" class="f16"></h2>
+                				<p data-bind="text: brief" class="f14"></p>
+                			</div>
+                		</div>
+                	</div>
+                </div>
+
+               
+			</div>
+			<div class="um-footer">
+				<div class="btn-group btn-group-justify">
+					<button type="button" class="btn" onclick="pre()">
+						上一步
+					</button>
+					<button type="button" class="btn" onclick="next()">
+						选择该方案
+					</button>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>

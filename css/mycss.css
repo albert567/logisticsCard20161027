@@ -1,0 +1,29 @@
+/*链接平常样式*/
+a:link {
+    font-size: 10pt;
+    color: #0000cc;
+    font-family: 宋体;
+    text-align: left;
+    text-decoration: underline;
+    TEXT-DECORATION:none;
+}
+/*链接访问后样式*/
+a:visited {
+    font-size: 9pt;
+    color: #0000cc;
+    font-family: 宋体;
+    text-align: left;
+    text-decoration: underline;
+    TEXT-DECORATION:none;
+}
+/*鼠标放到链接上样式*/
+a:hover {
+    color: #993300;
+    text-decoration: underline;
+    TEXT-DECORATION:none;
+}
+/*链接被按下时样式*/
+a:active {
+    color: #ff0033;
+    text-decoration: none;
+}
